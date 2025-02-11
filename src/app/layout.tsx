@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Kanit } from "next/font/google";
-import "../app/styles/globals.scss";
+import "../app/modules/common/styles/globals.scss";
 
 const kanit = Kanit({
   weight:'400', 
@@ -9,7 +9,7 @@ const kanit = Kanit({
 
 
 export const metadata: Metadata = {
-  title: "Epub Converter",
+  title: "Convwme",
   description: "Convert yours epub files quickly",
 };
 
