@@ -1,8 +1,6 @@
 @use "./variables.scss" as variables;
 
 body{
-  width: 100vw;
-  height: 100vh;
   font-family: kanit;
   font-weight: 400;
   background-color: variables.$color-main-background;
