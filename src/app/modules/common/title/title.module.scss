@@ -9,16 +9,14 @@
         margin: 0;
         letter-spacing: .5rem;
         &_subtitle{
-            background-color: variables.$color-title-background;
+            background-color: variables.$color-highlighted-transparented-background;
             font-size: 2rem;
             margin: 0;
-            opacity: .5;
 
             &_lower{
-                background-color: variables.$color-title-background;
+                background-color: variables.$color-highlighted-transparented-background;
                 font-size: 1.5rem;
                 margin: 0;
-                opacity: .5;
             }
         }
         &_supplement{

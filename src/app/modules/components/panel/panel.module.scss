@@ -1,4 +1,12 @@
 .panel{
     width: 100vw;
     height: 100vh;
+
+    &_button{
+        width: 40%;
+        height: 5%;
+        position: relative;
+        top:-50%;
+        justify-self: center;
+    }
 }

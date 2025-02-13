@@ -1,0 +1,19 @@
+@use "../../../modules/common/styles/variables.scss" as variables;
+
+.container{
+    position: relative;
+    top: -60%;
+    width: 80%;
+    justify-self: center;
+    border: 1px solid variables.$color-highlighted-background;
+    border-radius: 20px;
+    text-align: center;
+    height: 20vh;
+    z-index: 100 !important;
+    background-color: variables.$color-highlighted-transparented-background;
+    align-content: center;
+}
+
+.container > p {
+    margin: 0;
+}

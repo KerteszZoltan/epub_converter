@@ -1,0 +1,26 @@
+@use "../styles/variables.scss" as variables;
+
+.container{
+width: 100%;
+height: 100%;
+background-color: variables.$color-highlighted-transparented-background;
+border: 1px solid variables.$color-highlighted-background;
+border-radius: 20px;
+overflow: hidden;
+    &_button{
+        width: 200%;
+        height: 100%;
+        background: transparent;
+        border: 0;
+        &_left_side{
+            position: relative;
+            left:-25%;
+            color: variables.$color-main-text;
+        }
+    }
+    &_button:hover{
+        position: relative;
+        left:-100%;
+    }
+
+}
