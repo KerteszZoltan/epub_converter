@@ -7,6 +7,7 @@ import { useCallback } from 'react';
 import Button from '../../common/button/button';
 import JSZip from "jszip";
 import { PDFDocument } from "pdf-lib";
+import fontkit from "@pdf-lib/fontkit";
 
 
 export default function FileUpload() {
@@ -38,8 +39,13 @@ export default function FileUpload() {
             if (xhtmlFiles.length === 0) throw new Error("Nincsenek XHTML fejezetek az EPUB-ban.");
 
             const newBook = await PDFDocument.create();
+            const fontUrl = "/assets/fonts/roboto.ttf";
+            newBook.registerFontkit(fontkit);
+            const fontBytes = await fetch(fontUrl).then((res) => res.arrayBuffer());
+            const customFont = await newBook.embedFont(fontBytes);
+
             let pages = newBook.addPage();
-            const { width, height } = pages.getSize();
+            const {height, width} = pages.getSize();
 
             let yPosition = height - 20;
     
@@ -56,7 +62,7 @@ export default function FileUpload() {
                         if (yPosition < 50) {
                             // Új oldal hozzáadása és változó frissítése
                             pages = newBook.addPage();
-                            yPosition = height - 50;
+                            yPosition = height - 20;
                         }
             
                         // Szöveg kiírása az aktuális oldalra
@@ -64,10 +70,11 @@ export default function FileUpload() {
                             x: 50,
                             y: yPosition,
                             size: 12,
-                            maxWidth: width - 50,
+                            maxWidth: width,
+                            font: customFont,
                         });
             
-                        yPosition -= 30; // Sorok közti távolság
+                        yPosition -= 20; // Sorok közti távolság
                     }
                 }
             }
